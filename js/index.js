@@ -68,8 +68,6 @@ left:'0%'
      myImg1.css('left', (scTop*x) +(-100) + '%');
      var poLeft = 100 + (-(scTop*(x + (-y))));
      myImg2.css('left', poLeft  + '%');
-     console.log(scTop);
-     console.log();
     //  start title
      if (scTop >= 200) {
          myHTow.fadeIn(500).css({
@@ -113,5 +111,39 @@ left:'0%'
     deux.css('right', (scTop*deuxPo) + '%');
 
  });
+ // show and hide store
+ $('.store .close').on('click', function () {
+    $('.store').slideUp(500);
+ });
+ $('.btn-store').on('click', function () {
+    $('.store').slideDown(500).css('height', '100vh');
+
+ });
+ // start bx slider 
+ $('.bxslider').bxSlider();
+ //start gere fade and show info 
+ const numberBtn = $('.bx-wrapper .bx-pager.bx-default-pager a'),
+ iconDire = $('.bx-wrapper .bx-controls-direction a'),
+ myBoxInfo = $('.store .cont-vet .info-vet div');
+
+ const gereInfo = (elt, help, box) => {
+elt.on('click', function () {
+    let indexx = 0;
+    if (help === elt) {
+        indexx = $(this).attr('data-slide-index');
+    } else {
+        let active = $('.bx-wrapper .bx-pager.bx-default-pager a.active');
+        if(elt.hasClass('bx-next')) {
+            indexx = Number(active.attr('data-slide-index'));
+        } else {
+            indexx = Number(active.attr('data-slide-index'))- 1;
+        }
+    } 
+    box.eq(indexx).addClass('active').siblings().removeClass('active');  
+});
+
+ }
+ gereInfo(numberBtn, numberBtn, myBoxInfo);
+ gereInfo(iconDire, numberBtn, myBoxInfo);
 
 });

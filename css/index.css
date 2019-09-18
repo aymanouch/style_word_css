@@ -28,11 +28,146 @@ body{
 .point03{
     color:#c0546d
 }
+.point04{
+    color:#58c054
+}
 .book{
     width:50%;
     float:left;
 }
 /* end glabal classes  */
+/* strat store*/
+.store{
+    width: 100%;
+    height: 0vh;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    background: url(img/zwartevilt.png);
+    z-index: 9999;
+    color:#fff;
+    transition: height 1s linear;
+
+}
+.store .close{
+    position: absolute;
+    right: 1%;
+    font-size: 22px;
+    cursor: pointer;
+}
+.store .cont-vet{
+    border: 1px solid rgb(51, 51, 51);
+    width: 100%;
+    height: 90vh;
+    margin: 24px 0;
+    padding: 8px;
+}
+.store .cont-vet .info-vet{
+    width: 30%;
+    height: 100%;
+    position: relative;
+}
+.store .cont-vet .info-vet div{
+    position: absolute;
+    display:none;
+    transition: all 1s ease;
+}
+.store .cont-vet .info-vet div.active{
+    display: block;
+}
+.store .cont-vet .info-vet h1{
+    font-size: 40px;
+    text-transform: capitalize
+}
+.store .cont-vet .info-vet .descr{
+    font-size:16px;
+    color: #4b4b4b;
+
+}
+.store .cont-vet .info-vet .price{
+    font-size:25px;
+    color:#c0546d;
+    padding-left: 80%;
+    margin-top: 32px;
+
+}
+.store .cont-vet .info-vet a{
+    display: block;
+    padding: 16px 16px;
+    background: #FFE66D;
+    color:#000;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 64px;
+    transition: background .3s ease;
+}
+.store .cont-vet .info-vet a:hover{
+    background: rgb(209, 188, 80);
+}
+.store .cont-vet .img-vet{
+    width: 70%;
+    height: 100%;
+    padding: 80px 16px 56px 16px;
+    box-sizing: border-box;
+}
+.store .cont-vet .img-vet img{
+width: 100%;
+height: 100%;
+}
+/*start bxslider style*/
+.bx-controls-direction{
+    position: absolute;
+    right: 10%;
+    bottom: -6%;
+}
+.bx-controls-direction .bx-prev{
+    left:-60px;
+    background: url(img/left-arrow.png);
+    background-size: 100% 100%;
+
+}
+.bx-controls-direction .bx-next{
+    right:-40px;
+    background: url(img/right-arrow.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+}
+.bx-wrapper .bx-next:hover, .bx-wrapper .bx-next:focus {
+    background-position: 0px 0;
+}
+.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+    right: 30%;
+    bottom: -45px;
+    padding: 0;
+}
+.bx-wrapper .bx-pager.bx-default-pager a {
+    width: 60px;
+    text-indent: 0;
+    color:#fff;
+    font-size: 16px;
+    height: 60px;
+    border-radius: none;
+    background: none;
+    line-height: 60px;
+    text-decoration: none;
+}
+.bx-wrapper .bx-pager.bx-default-pager a:not(.active):hover{
+    color: #FFE66D;
+    background: none;
+}
+.bx-wrapper .bx-pager.bx-default-pager a.active, .bx-wrapper .bx-pager.bx-default-pager a:focus {
+    font-size: 106px;
+    background: none;
+}
+.bx-wrapper {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow:none;
+    border: none;
+    background: none;
+}
 /* start header */
 header{
  width: 100%;
@@ -40,6 +175,7 @@ header{
  position: relative;
  color:#fff;
  background: #000;
+ overflow: hidden;
 }
 header .h-box{
     width: 50%;
@@ -90,7 +226,7 @@ header .head-right .circle{
 
 }
 header .head-right ul li {
-margin-left: 100px;
+margin-left: 80px;
 font-family: 'Montserrat', sans-serif;
 cursor: pointer;
 transition: all 1s esae;
@@ -99,7 +235,7 @@ header .head-right ul li:hover{
     transform: scale(1.2, 1.2);
 }
 header .head-right ul li:first-child{
-    margin-left: 160px;
+   margin-left: 0px;
 }
 
 /* start section  */
@@ -108,6 +244,8 @@ section{
     height: auto;
     color:#fff;
     background: #000;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 section .sec-box{
     width:50%;
@@ -374,6 +512,8 @@ footer{
     background: #000;
     color: #fff;
     position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 footer .year{
     width: 100%;
